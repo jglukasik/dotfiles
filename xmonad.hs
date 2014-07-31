@@ -21,6 +21,7 @@ import System.Exit
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run
+import XMonad.Util.Scratchpad
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -92,9 +93,21 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
     
-    -- launch a terminal
+    -- launch chrome
     , ((modm,               xK_w     ), spawn "google-chrome")
+    
+    -- launch the scratchpad
+    , ((modm,               xK_hyphen ), scratchpadSpawnAction conf)
+
+    -- control brightness with chromebook keys
+    , ((0,                  xK_F6     ), spawn "brightness down")
+    , ((0,                  xK_F7     ), spawn "brightness up")
  
+    -- control volume with chromebook keys
+    , ((0,                  xK_F8     ), spawn "amixer sset -D pulse Master playback toggle")
+    , ((0,                  xK_F9     ), spawn "amixer set Master 9%-")
+    , ((0,                  xK_F10    ), spawn "amixer set Master 9%+")
+
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
  
@@ -253,7 +266,8 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    ]
  
 ------------------------------------------------------------------------
 -- Event handling
@@ -311,8 +325,8 @@ main = do
                                  { ppOutput = hPutStrLn xmproc
                                  , ppOrder = \(ws:_) -> [ws]
                                  }
+     ,  manageHook = myManageHook <+> scratchpadManageHookDefault
      }
-
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
