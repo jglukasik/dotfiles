@@ -11,9 +11,9 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , commands = [ Run Cpu ["-p","2","-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run Battery ["-t","Batt: <left>% <timeleft>"] 100
-                    , Run DiskU [("/", "Disk: <freep>%")] [] 100
+                    , Run DiskU [("/", "Disk: <free>")] [] 100
                     , Run Wireless "wlan0" ["-t","<essid> <quality>%"] 100
                     , Run StdinReader
                     ]

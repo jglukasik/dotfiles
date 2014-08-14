@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $MUSIC /home/joseph/scripts/music_controller.pl
+#set $MUSIC /home/joseph/scripts/music_controller.pl
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -22,10 +22,10 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a file manager
-bindsym $mod+f exec thunar
+#bindsym $mod+f exec thunar
 
 # Randomize the wallpaper
-bindsym $mod+b exec feh --randomize --bg-fill ~/Documents/wallpapers/*
+#bindsym $mod+b exec feh --randomize --bg-fill ~/Documents/wallpapers/*
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -35,29 +35,29 @@ bindsym $mod+d exec dmenu_run
 
 # Start applications
 bindsym $mod+w exec chromium-browser
-bindsym $mod+m exec matlab -desktop -r 'cd /home/joseph/Documents/MATLAB'
+#bindsym $mod+m exec matlab -desktop -r 'cd /home/joseph/Documents/MATLAB'
 
 # Float matlab figures by default
-for_window [title="<Student Version> Figure"] floating enable
+#for_window [title="<Student Version> Figure"] floating enable
 
 # Brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
+bindsym F6 exec brightness down
+bindsym F7 exec brightness up
 
 # Keyboard backlight controls
-bindsym XF86KbdBrightnessUp exec 'echo 1 | dd of=/sys/devices/platform/asus-nb-wmi/leds/asus::kbd_backlight/brightness'
-bindsym XF86KbdBrightnessDown exec 'echo 0 | dd of=/sys/devices/platform/asus-nb-wmi/leds/asus::kbd_backlight/brightness'
+#bindsym XF86KbdBrightnessUp exec 'echo 1 | dd of=/sys/devices/platform/asus-nb-wmi/leds/asus::kbd_backlight/brightness'
+#bindsym XF86KbdBrightnessDown exec 'echo 0 | dd of=/sys/devices/platform/asus-nb-wmi/leds/asus::kbd_backlight/brightness'
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec amixer set Master 9%+
-bindsym XF86AudioLowerVolume exec amixer set Master 9%-
-bindsym XF86AudioMute exec amixer sset -D pulse Master playback toggle
+bindsym F10 exec amixer set Master 9%+
+bindsym F9 exec amixer set Master 9%-
+bindsym F8 exec amixer sset -D pulse Master playback toggle
 
 # Music controls
-bindsym XF86AudioNext exec $MUSIC next
-bindsym XF86AudioPrev exec $MUSIC prev
-bindsym XF86AudioPlay exec $MUSIC pause
-bindsym XF86AudioStop exec $MUSIC like
+#bindsym XF86AudioNext exec $MUSIC next
+#bindsym XF86AudioPrev exec $MUSIC prev
+#bindsym XF86AudioPlay exec $MUSIC pause
+#bindsym XF86AudioStop exec $MUSIC like
 
 # change focus (vim style)
 bindsym $mod+h focus left
@@ -116,8 +116,8 @@ bindsym $mod+a focus parent
 #bindcode $mod+d focus child
 
 # place workspaces 8-10 on my right monitor
-workspace 1 output DFP1
-workspace 10 output LVDS
+#workspace 1 output DFP1
+#workspace 10 output LVDS
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -190,4 +190,5 @@ bar {
         status_command i3status
 }
 
+exec sh ~/.fehbg
 exec xscreensaver -no-splash

@@ -28,8 +28,8 @@ import qualified Data.Map        as M
  
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
---
-myTerminal      = "xfce4-terminal -e tmux"
+
+myTerminal      = "xfce4-terminal -e tmux";
  
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -78,7 +78,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","♫"]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -92,6 +92,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     -- launch a terminal
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
+    , ((modm,               xK_t     ), spawn "xfce4-terminal")
     
     -- launch chrome
     , ((modm,               xK_w     ), spawn "google-chrome")
@@ -154,7 +155,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_l     ), sendMessage Expand)
  
     -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
+    --, ((modm,               xK_t     ), withFocused $ windows . W.sink)
  
     -- Increment the number of windows in the master area
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
