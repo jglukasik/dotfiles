@@ -3,6 +3,7 @@
 dotfile_dir="$HOME/dotfiles"
 
 ln -sf $dotfile_dir/vimrc ~/.vimrc
+ln -sf $dotfile_dir/bashrc ~/.bashrc
 ln -sf $dotfile_dir/config ~/.i3/config
 
 vundle="$HOME/.vim/bundle/Vundle.vim"

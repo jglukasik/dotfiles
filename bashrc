@@ -5,21 +5,13 @@
 
 set -o emacs
 
+export GIT_EDITOR=vim
+export EDITOR=vim
+export VISUAL=vim
 # Aliases
 alias sudo='sudo '
 
 alias rm='rm -i'
-
-alias gv='~/Documents/SMS/gvsms/gv.py'
-alias ml='cd /home/joseph/Documents/MATLAB; matlab /home/joseph/Documents/MATLAB/'
-
-alias awrc='vim ~/.config/awesome/rc.lua'
-
-# ls aliases
-alias la='ls -a'
-alias ll='ls -l'
-alias le='ls -la'
-alias lsg='ls | grep'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -109,4 +101,3 @@ if [ -x /usr/lib/command-not-found ]; then
 	}
 fi
 
-/usr/bin/mint-fortune
