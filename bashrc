@@ -8,18 +8,11 @@ set -o emacs
 # Aliases
 alias sudo='sudo '
 
+alias x='xmodmap ~/.Xmodmap'
+
 alias rm='rm -i'
 
-alias gv='~/Documents/SMS/gvsms/gv.py'
-alias ml='cd /home/joseph/Documents/MATLAB; matlab /home/joseph/Documents/MATLAB/'
-
-alias awrc='vim ~/.config/awesome/rc.lua'
-
-# ls aliases
-alias la='ls -a'
-alias ll='ls -l'
-alias le='ls -la'
-alias lsg='ls | grep'
+alias t='tmux'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -108,5 +101,3 @@ if [ -x /usr/lib/command-not-found ]; then
 		fi
 	}
 fi
-
-/usr/bin/mint-fortune
