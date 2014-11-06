@@ -5,14 +5,13 @@
 
 set -o emacs
 
+export GIT_EDITOR=vim
+export EDITOR=vim
+export VISUAL=vim
 # Aliases
 alias sudo='sudo '
 
-alias x='xmodmap ~/.Xmodmap'
-
 alias rm='rm -i'
-
-alias t='tmux'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -101,3 +100,7 @@ if [ -x /usr/lib/command-not-found ]; then
 		fi
 	}
 fi
+<<<<<<< HEAD
+=======
+
+>>>>>>> e0464102b48f19acf533e029fc50909879b281cb
