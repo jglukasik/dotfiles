@@ -100,7 +100,3 @@ if [ -x /usr/lib/command-not-found ]; then
 		fi
 	}
 fi
-<<<<<<< HEAD
-=======
-
->>>>>>> e0464102b48f19acf533e029fc50909879b281cb
