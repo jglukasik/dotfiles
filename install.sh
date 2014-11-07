@@ -7,6 +7,7 @@ ln -sf $dotfile_dir/xinitrc ~/.xinitrc
 ln -sf $dotfile_dir/bashrc ~/.bashrc
 ln -sf $dotfile_dir/config ~/.i3/config
 ln -sf $dotfile_dir/tmux-master ~/.tmux.conf
+ln -sf $dotfile_dir/Xdefaults ~/.Xdefaults
 
 vundle="$HOME/.vim/bundle/Vundle.vim"
 if [ ! -d $vundle ]; then
