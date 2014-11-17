@@ -1,0 +1,2 @@
+! when i press shift fullscreenbutton, paste
+keycode  70 = F4 Insert

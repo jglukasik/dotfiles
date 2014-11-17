@@ -12,7 +12,7 @@ urxvt*depth: 32
 urxvt*saveLines: 2000
 urxvt*secondaryScroll: true
 urxvt*.transparent: true
-urxvt*.shading: 10 
+urxvt*.shading: 13 
 
 !Colors
 urxvt*foreground: white
