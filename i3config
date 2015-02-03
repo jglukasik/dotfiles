@@ -37,7 +37,6 @@ bindsym $mod+d exec dmenu_run
 
 # Start applications
 bindsym $mod+w exec google-chrome-beta
-#bindsym $mod+m exec matlab -desktop -r 'cd /home/joseph/Documents/MATLAB'
 
 # Use xprop to find these properties:
 # Float matlab figures by default
@@ -47,6 +46,9 @@ bindsym $mod+w exec google-chrome-beta
 for_window [window_role="app"] floating enable
 
 for_window [class="Gimp"] floating enable
+
+# No border for chrome
+for_window [window_role="browser"] border pixel 1
 
 # Reset keyboard
 bindsym F5 exec sh "xmodmap /etc/.Xmodmap"
@@ -201,4 +203,5 @@ bar {
 }
 #exec i3-sensible-terminal
 exec sh ~/.fehbg
+exec xmodmap ~/.Xmodmap
 #exec xscreensaver -no-splash
