@@ -2,16 +2,19 @@
 
 # To enable the settings / commands in this file for login shells as well,
 
-
 set -o emacs
+
+PATH=~/.cabal/bin:$PATH
 
 export GIT_EDITOR=vim
 export EDITOR=vim
 export VISUAL=vim
+
 # Aliases
 alias sudo='sudo '
-
 alias rm='rm -i'
+
+alias t='tmux attach'
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
