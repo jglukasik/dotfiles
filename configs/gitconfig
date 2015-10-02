@@ -1,0 +1,11 @@
+[user]
+	name = Joseph Lukasik
+	email = jglukasik@wisc.edu
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+	df = diff
+[push]
+	default = simple
