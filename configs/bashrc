@@ -16,6 +16,10 @@ alias rm='rm -i'
 
 alias t='tmux attach'
 
+alias n='vim -c "VimwikiMakeDiaryNote"'
+
+alias web='python -m SimpleHTTPServer'
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -102,4 +106,9 @@ if [ -x /usr/lib/command-not-found ]; then
 		   return 127
 		fi
 	}
+fi
+
+#set bg
+if [ -f /home/jglukasik/.fehbg ]; then
+  sh /home/jglukasik/.fehbg
 fi

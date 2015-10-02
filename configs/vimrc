@@ -28,10 +28,11 @@ filetype plugin on
 syntax on
 
 "vimwiki settings
-let g:vimwiki_list = [{'path': '~/wiki/'}]
-"  'template_path': '~/wiki_html/templates/',
-"  'template_default': 'def_template',
-"  'template_ext': 'def_template'}]
+let g:vimwiki_list = [{ 'path': '~/wiki/',
+                     \ 'template_path': '~/wiki/tools/',
+                     \ 'template_default': 'default',
+                     \ 'template_ext': '.tpl',
+                     \ 'custom_wiki2html': '~/wiki/tools/parser.pl'}]
 
 colorscheme elflord
 "colorscheme peachpuff

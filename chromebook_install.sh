@@ -3,7 +3,7 @@
 # sh -e ~/Downloads/crouton -r trusty -t core,cli-extra,audio,xorg,x11,extension,chrome-beta
 
 apt-get update
-apt-get install vim git i3 feh tmux rxvt-unicode xfonts-terminus man-db mosh
+apt-get install vim git tmux rxvt-unicode xfonts-terminus man-db mosh
 
 dotfile_dir="$HOME/dotfiles/configs"
 
